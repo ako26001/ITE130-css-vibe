@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>ITE130 MDU</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --mdu-green: #00352d;
+            --mdu-orange: #fe4800;
+            --mdu-orange-text: #b33a08;
+            --mdu-beige: #fcf4eb;
+        }
+        body {
+            background-color: var(--mdu-beige);
+            color: #171717;
+            font-family: Georgia, "Times New Roman", serif;
+            line-height: 1.5;
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        .navbar-brand {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .navbar-mdu {
+            background-color: var(--mdu-green);
+            border-bottom: 3px solid var(--mdu-orange);
+            --bs-navbar-color: var(--mdu-beige);
+            --bs-navbar-hover-color: var(--mdu-beige);
+            --bs-navbar-active-color: var(--mdu-beige);
+            --bs-navbar-brand-color: var(--mdu-beige);
+            --bs-navbar-brand-hover-color: var(--mdu-beige);
+        }
+        .navbar-mdu .navbar-brand,
+        .navbar-mdu .navbar-nav .nav-link,
+        .navbar-mdu .navbar-nav .nav-link.active {
+            color: var(--mdu-beige);
+        }
+        .navbar-mdu .navbar-brand {
+            font-weight: 700;
+        }
+        .navbar-mdu .nav-link:hover,
+        .navbar-mdu .nav-link:focus-visible {
+            color: var(--mdu-beige);
+            text-decoration: underline;
+            text-decoration-color: var(--mdu-orange);
+            text-decoration-thickness: 3px;
+            text-underline-offset: 0.35em;
+        }
+        .hero-section {
+            background-color: var(--mdu-green);
+            color: #fff;
+            overflow: hidden;
+        }
+        .hero-copy {
+            min-height: 390px;
+        }
+        .hero-eyebrow,
+        .section-eyebrow,
+        .card-eyebrow,
+        .info-eyebrow {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+        }
+        .hero-eyebrow {
+            color: #ffd2c2;
+        }
+        .hero-section h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.05;
+            max-width: 26ch;
+            margin-inline: auto;
+        }
+        .hero-copy .lead {
+            max-width: 60ch;
+            margin-inline: auto;
+        }
+        .hero-mark {
+            background-color: #fff;
+            border-left: 6px solid var(--mdu-orange);
+            color: var(--mdu-green);
+            min-height: 390px;
+        }
+        .hero-mark-label,
+        .hero-mark-caption {
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        .hero-mark-code {
+            font-size: clamp(4rem, 9vw, 8rem);
+            font-weight: 700;
+            letter-spacing: -0.08em;
+            line-height: 0.8;
+        }
+        .hero-mark-code span {
+            color: var(--mdu-orange);
+        }
+        .section-eyebrow,
+        .card-eyebrow,
+        .info-eyebrow {
+            color: var(--mdu-orange-text);
+        }
+        .section-title {
+            color: var(--mdu-green);
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            font-weight: 700;
+        }
+        .card {
+            border: 0;
+            border-top: 4px solid var(--mdu-orange);
+            border-radius: 0;
+        }
+        .card.shadow {
+            box-shadow: 0 0.5rem 1.25rem rgba(0, 53, 45, 0.1) !important;
+        }
+        .card-body {
+            padding: 1.75rem;
+        }
+        .card-title {
+            color: var(--mdu-green);
+            font-weight: 700;
+        }
+        .card-text {
+            line-height: 1.7;
+        }
+        .btn-mdu {
+            background-color: var(--mdu-orange);
+            border-color: var(--mdu-orange);
+            border-radius: 50rem;
+            color: #171717;
+            font-weight: 700;
+            padding: 0.7rem 1.4rem;
+        }
+        .btn-mdu:hover,
+        .btn-mdu:focus-visible {
+            background-color: #e84100;
+            border-color: #e84100;
+            color: #171717;
+        }
+        .info-panel {
+            background-color: var(--mdu-green);
+            border-left: 6px solid var(--mdu-orange);
+            color: #fff;
+        }
+        .info-panel h2 {
+            color: #fff;
+            font-weight: 700;
+        }
+        .info-panel p {
+            line-height: 1.7;
+        }
+        @media (max-width: 991.98px) {
+            .hero-mark {
+                border-left: 0;
+                border-top: 6px solid var(--mdu-orange);
+                min-height: 280px;
+            }
+        }
+        @media (max-width: 575.98px) {
+            .hero-copy {
+                min-height: 340px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-mdu">
+        <div class="container">
+            <a class="navbar-brand" href="#">Interaktiva gränssnitt på MDU</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarInnehall" aria-controls="navbarInnehall" aria-expanded="false" aria-label="Visa navigering">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarInnehall">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Hem</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#om">Om sidan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#studentintervjuer">Studenter</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#git-github">Git och GitHub</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#bootstrap">Bootstrap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#kontakt">Kontakt</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <section id="om" class="hero-section row g-0">
+            <div class="col-12 hero-copy d-flex flex-column align-items-center justify-content-center text-center p-4 p-md-5">
+                <p class="hero-eyebrow mb-3">ITE130 - Mälardalens universitet</p>
+                <h1>Välkommen till Interaktiva gränssnitt på Mälardalens universitet</h1>
+                <p class="lead my-4">Lär känna kursen ITE130 genom studenternas perspektiv och upptäck vad som gör studierna givande.</p>
+                <div>
+                    <a href="#studentintervjuer" class="btn btn-mdu">Möt studenterna</a>
+                </div>
+            </div>
+            
+        </section>
+        <section id="studentintervjuer" class="mt-5" aria-labelledby="studentintervjuer-rubrik">
+            <div class="mb-4">
+                
+                <h2 id="studentintervjuer-rubrik" class="section-title">Studenter om ITE130</h2>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <p class="card-eyebrow mb-2">FIKTIV EXEMPELPERSON</p>
+                            <h3 class="card-title h4">Sara om ITE130</h3>
+                            <p class="card-text">I den här intervjun berättar Sara vad hon uppskattar med kursen och hur studierna hjälper henne att utveckla sina kunskaper.</p>
+                            <a href="#kontakt" class="btn btn-mdu">Läs mer</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <p class="card-eyebrow mb-2">FIKTIV EXEMPELPERSON</p>
+                            <h3 class="card-title h4">Amir om studietiden</h3>
+                            <p class="card-text">Amir delar i en intervjun med sig av det bästa med kursen. Han berättar om upplägget, uppgifterna och gemenskapen på MDU.</p>
+                            <a href="#kontakt" class="btn btn-mdu">Läs mer</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <p class="card-eyebrow mb-2">FIKTIV EXEMPELPERSON</p>
+                            <h3 class="card-title h4">Elin om framtiden</h3>
+                            <p class="card-text">I en intervju berättar Elin hur ITE130 väckt hennes intresse för webbutveckling och vad hon vill lära sig härnäst.</p>
+                            <a href="#kontakt" class="btn btn-mdu">Läs mer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="row g-4 mt-4">
+            <div class="col-12 col-lg-6">
+                <section id="git-github" class="info-panel h-100 p-4 p-md-5" aria-labelledby="git-github-rubrik">
+                    <p class="info-eyebrow mb-2">SAMARBETE OCH VERSIONSHANTERING</p>
+                    <h2 id="git-github-rubrik" class="mb-3">Git och GitHub</h2>
+                    <p>Git är ett versionshanteringssystem som håller reda på ändringar i ett projekt. Med Git kan du spara arbetet i så kallade commits, se vad som har ändrats och gå tillbaka till en tidigare version om något blir fel. Du kan också skapa separata grenar (branches) för att prova nya idéer utan att påverka huvudversionen.</p>
+                    <p class="mb-0">GitHub är en webbtjänst där Git-projekt kan lagras och delas. Där kan flera personer samarbeta genom att föreslå ändringar, granska kod och diskutera uppgifter. GitHub gör alltså det enklare att samarbeta kring projekt på nätet.</p>
+                </section>
+            </div>
+            <div class="col-12 col-lg-6">
+                <section id="bootstrap" class="info-panel h-100 p-4 p-md-5" aria-labelledby="bootstrap-rubrik">
+                    <p class="info-eyebrow mb-2">VERKTYG FÖR WEBBUTVECKLING</p>
+                    <h2 id="bootstrap-rubrik" class="mb-3">Bootstrap</h2>
+                    <p>Bootstrap är ett front-end-ramverk som hjälper dig att bygga webbsidor som fungerar på både mobil och dator. Det innehåller ett responsivt rutnät med rader och kolumner som anpassar layouten efter skärmens storlek.</p>
+                    <p class="mb-0">Ramverket innehåller också färdiga CSS-klasser och komponenter, till exempel navbarer, kort och knappar. Det gör det enklare att skapa en enhetlig design och komma igång med sidans utseende. Bootstrap kan anpassas med egen CSS, som på den här sidan.</p>
+                </section>
+            </div>
+        </div>
+        <section id="kontakt" class="text-center mt-5">
+            <h2>Kontakt</h2>
+            <p>Kontakta mig gärna om du vill veta mer.</p>
+            <p><i class="fa-solid fa-phone"></i>Telefon: 070-123 45 67</p>
+            <p><i class="fa-solid fa-envelope"></i> E-post: ingen.riktig.mail@mdu.se</p>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
