@@ -32,14 +32,16 @@ Att påverka browser default style. Dvs se till att lägga på lager av style f�
 ```
 
 ## Bootstrap 
+Det är ett stilklassbibliotek som tillhandahåller kod för olika grafiska element och stilar som är klara att kopiera och klistra in i sitt projekt.
 
+Innan man kan använda Bootstrap behöver man lägga till en cdn-länk till deras stylesheet i ```<head>```.
 
-
-
-
-
-
-
+Ett exempel är koden nedan, för en knapp med länk, som är tagen från Bootstrap.
+```
+<a class="btn btn-primary" href="#" role="button">Link</a>
+```
+Resultatet blir alltså denna knapp.
+<a class="btn btn-primary" href="#" role="button">Link</a>
 
 ## Vibe Coding
 Att använda sig av AI för att skriva kod kallas Vibe coding. Alltså ber man AI att till exempel skapa en ruta med text och bild i. AI tar då av redan skriven kod som någon annan har gjort eller kombinerar olika befintliga koder för att uppnå det du bett den göra. 
